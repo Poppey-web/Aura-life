@@ -571,7 +571,8 @@ def render_sidebar():
         current_level_xp = xp_for_level(profile.level)
         next_level_xp = xp_for_level(profile.level + 1)
         progress = (current_xp - current_level_xp) / (next_level_xp - current_level_xp) if next_level_xp > current_level_xp else 0
-        st.progress(min(progress, 1.0))
+        safe_progress = max(0.0, min(float(progress), 1.0))
+st.progress(safe_progress)
         
         st.markdown("---")
         
