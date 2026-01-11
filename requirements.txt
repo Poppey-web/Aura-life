@@ -1,5 +1,4 @@
-fastapi
-uvicorn
+streamlit
 sqlalchemy
-jinja2
-python-multipart
+plotly
+pandas
